@@ -248,6 +248,7 @@
         "filp/whoops": "^2.7",
         "phpstan/phpstan": "^1.9.16",
         "phpunit/phpunit": "^9.5.2",
+        "slevomat/coding-standard": "^8.13",
         "spryker-feature/development-tools": "^202307.0",
         "spryker-sdk/benchmark": "^0.2.2",
         "spryker-sdk/composer-constrainer": "^0.2.6",
