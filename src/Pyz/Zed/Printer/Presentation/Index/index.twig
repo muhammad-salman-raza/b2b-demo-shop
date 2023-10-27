@@ -1,0 +1,35 @@
+{% extends '@Gui/Layout/layout.twig' %}
+{% set widget_title = 'Printer' %}
+{% block head_title widget_title | trans %}
+{% block section_title widget_title | trans %}
+{% block action %}
+    {{ createActionButton('/printer/index/print', 'Print') }}
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-12">
+        {% set widget_title = 'Print Jobs' %}
+        {% set table_content = printJobTable %}
+        {% include '@Printer/_partials/data_table.twig' %}
+    </div>
+    <div class="clearfix"></div>
+
+    {% if printerProfile is not null %}
+    <div class="col-md-4">
+        {% include '@Printer/_partials/profile.twig' %}
+    </div>
+    {% endif %}
+    <div class="col-md-8">
+        {% set widget_title = 'Computers' %}
+        {% set table_content = computerTable %}
+        {% include '@Printer/_partials/data_table.twig' %}
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="col-md-12">
+        {% set widget_title = 'Printers' %}
+        {% set table_content = printerTable %}
+        {% include '@Printer/_partials/data_table.twig' %}
+    </div>
+
+{% endblock %}

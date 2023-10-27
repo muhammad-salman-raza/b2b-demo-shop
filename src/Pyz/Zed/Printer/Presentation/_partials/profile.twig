@@ -1,0 +1,51 @@
+{% set widget_title = 'Profile' %}
+{% embed '@Gui/Partials/widget.twig' %}
+
+
+    {% block widget_content %}
+
+        <table class="table table-striped">
+            <tr>
+                <td>
+                    <strong>{{ 'ID' | trans }}</strong>
+                </td>
+                <td>{{ printerProfile.profileId }}</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Name</strong>
+                </td>
+                <td>{{ printerProfile.firstName }} {{ printerProfile.lastName }}</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>{{ 'Email' | trans }}</strong>
+                </td>
+                <td>{{ printerProfile.email }}</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <strong>{{ 'State' | trans }}</strong>
+                </td>
+                <td>{{ printerProfile.state }}</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <strong>{{ 'Computers' | trans }}</strong>
+                </td>
+                <td>{{ printerProfile.numComputers }}</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <strong>{{ 'Total Prints' | trans }}</strong>
+                </td>
+                <td>{{ printerProfile.totalPrints }}</td>
+            </tr>
+        </table>
+
+    {% endblock %}
+
+{% endembed %}

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config>
+    <printer>
+        <label>Printers</label>
+        <title>Printers</title>
+        <bundle>printer</bundle>
+        <controller>index</controller>
+        <action>index</action>
+        <visible>1</visible>
+        <pages>
+            <printer-add>
+                <label>Print</label>
+                <title>Print</title>
+                <bundle>printer</bundle>
+                <controller>index</controller>
+                <action>print</action>
+                <visible>0</visible>
+            </printer-add>
+        </pages>
+    </printer>
+</config>

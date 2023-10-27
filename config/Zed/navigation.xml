@@ -483,6 +483,13 @@
                 <controller>index</controller>
                 <action>index</action>
             </oms>
+            <printer>
+                <label>Printers</label>
+                <title>Printers</title>
+                <bundle>printer</bundle>
+                <controller>index</controller>
+                <action>index</action>
+            </printer>
             <statemachines-index>
                 <label>State Machine</label>
                 <title>State Machine</title>

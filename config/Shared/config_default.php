@@ -27,6 +27,7 @@ use Generated\Shared\Transfer\SearchEndpointAvailableTransfer;
 use Generated\Shared\Transfer\SearchEndpointRemovedTransfer;
 use Monolog\Logger;
 use Pyz\Shared\Console\ConsoleConstants;
+use Pyz\Shared\Printer\PrinterConstants;
 use Pyz\Shared\Scheduler\SchedulerConfig;
 use Pyz\Yves\ShopApplication\YvesBootstrap;
 use Pyz\Zed\Application\Communication\ZedBootstrap;
@@ -807,3 +808,10 @@ $config[AppCatalogGuiConstants::OAUTH_OPTION_AUDIENCE] = 'aop-atrs';
 $config[OauthClientConstants::OAUTH_PROVIDER_NAME_FOR_PAYMENT_AUTHORIZE] = OauthAuth0Config::PROVIDER_NAME;
 $config[OauthClientConstants::OAUTH_GRANT_TYPE_FOR_PAYMENT_AUTHORIZE] = OauthAuth0Config::GRANT_TYPE_CLIENT_CREDENTIALS;
 $config[OauthClientConstants::OAUTH_OPTION_AUDIENCE_FOR_PAYMENT_AUTHORIZE] = 'aop-app';
+
+
+// ----------------------------------------------------------------------------
+// ------------------------------ Printer ---------------------------------------
+// ----------------------------------------------------------------------------
+$config[PrinterConstants::PRINTNODE_BASE_URL] = getenv('PRINTNODE_BASE_URL') ?: 'https://api.printnode.com/';
+$config[PrinterConstants::PRINTNODE_KEY] = getenv('PRINTNODE_KEY');

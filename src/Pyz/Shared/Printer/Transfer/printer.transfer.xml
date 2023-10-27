@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<transfers xmlns="spryker:transfer-01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="spryker:transfer-01 http://static.spryker.com/transfer-01.xsd">
+
+    <transfer name="PrinterProfile" strict="true">
+        <property name="profileId" type="int"/>
+        <property name="email" type="string"/>
+        <property name="firstName" type="string"/>
+        <property name="lastName" type="string"/>
+        <property name="state" type="string"/>
+        <property name="totalPrints" type="int"/>
+        <property name="numComputers" type="int"/>
+    </transfer>
+
+    <transfer name="Computer" strict="true">
+        <property name="computerId" type="int"/>
+        <property name="hostname" type="string"/>
+        <property name="inet" type="string"/>
+        <property name="name" type="string"/>
+        <property name="state" type="string"/>
+    </transfer>
+
+    <transfer name="Printer" strict="true">
+        <property name="printerId" type="int"/>
+        <property name="computer" type="Computer"/>
+        <property name="default" type="bool"/>
+        <property name="name" type="string"/>
+        <property name="description" type="string"/>
+        <property name="state" type="string"/>
+    </transfer>
+
+    <transfer name="PrintJob" strict="true">
+        <property name="printjobId" type="int"/>
+        <property name="createTimestamp" type="string"/>
+        <property name="expireAt" type="string"/>
+        <property name="contentType" type="string"/>
+        <property name="source" type="string"/>
+        <property name="state" type="string"/>
+        <property name="title" type="string"/>
+        <property name="printer" type="Printer"/>
+    </transfer>
+
+    <transfer name="PrintRequest" strict="true">
+        <property name="printer" type="Printer"/>
+        <property name="contentType" type="string"/>
+        <property name="content" type="string"/>
+        <property name="title" type="string"/>
+        <property name="source" type="string"/>
+        <property name="expireAfter" type="int"/>
+        <property name="qty" type="int"/>
+        <property name="options" type="PrintOptions"/>
+        <property name="authentication" type="PrintAuthentication"/>
+    </transfer>
+
+    <transfer name="PrintAuthentication" strict="true">
+        <property name="type" type="string"/>
+        <property name="user" type="string"/>
+        <property name="pass" type="bool"/>
+    </transfer>
+
+    <transfer name="PrintOptions" strict="true">
+        <property name="bin" type="string"/>
+        <property name="collate" type="bool"/>
+        <property name="color" type="bool"/>
+        <property name="copies" type="int"/>
+        <property name="dpi" type="string"/>
+        <property name="duplex" type="string"/>
+        <property name="fitToPage" type="bool"/>
+        <property name="media" type="string"/>
+        <property name="nup" type="int"/>
+        <property name="pages" type="string"/>
+        <property name="paper" type="string"/>
+    </transfer>
+
+</transfers>

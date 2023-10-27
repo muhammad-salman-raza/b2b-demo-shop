@@ -1,0 +1,40 @@
+namespace: PyzTest\Zed\Printer
+
+paths:
+    tests: .
+    data: ../../../_data
+    support: _support
+    output: ../../../_output
+
+coverage:
+    enabled: true
+    remote: false
+    whitelist: { include: ['../../../../src/*'] }
+
+suites:
+    Communication:
+        path: Communication
+        actor: PrinterCommunicationTester
+        modules:
+            enabled:
+                - Asserts
+                - \SprykerTest\Shared\Testify\Helper\Environment
+                - \SprykerTest\Shared\Testify\Helper\ConfigHelper
+                - \SprykerTest\Shared\Testify\Helper\LocatorHelper
+                - \SprykerTest\Service\Container\Helper\ContainerHelper
+                - \SprykerTest\Zed\Testify\Helper\Communication\CommunicationHelper
+                - \SprykerTest\Zed\Testify\Helper\Communication\Table\TableHelper
+                - \SprykerTest\Zed\Testify\Helper\Communication\DependencyProviderHelper
+                - \SprykerTest\Zed\EventDispatcher\Helper\EventDispatcherHelper
+                - \SprykerTest\Zed\Twig\Helper\TwigHelper:
+                      twigPlugins:
+                          - \Spryker\Zed\Translator\Communication\Plugin\Twig\TranslatorTwigPlugin
+                          - Spryker\Zed\ZedNavigation\Communication\Plugin\Twig\ZedNavigationTwigPlugin
+                - \SprykerTest\Zed\Application\Helper\ApplicationHelper
+                - \SprykerTest\Shared\Testify\Helper\DependencyHelper
+                - \SprykerTest\Shared\Testify\Helper\DataCleanupHelper
+                - \SprykerTest\Zed\EventDispatcher\Helper\EventDispatcherHelper
+                - \SprykerTest\Zed\Router\Helper\RouterHelper
+                - \SprykerTest\Zed\Security\Helper\SecurityHelper
+                - \SprykerTest\Zed\Session\Helper\SessionHelper
+                - \SprykerTest\Zed\Testify\Helper\Business\BusinessHelper
